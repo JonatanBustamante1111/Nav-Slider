@@ -39,13 +39,14 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: space-around;
+    justify-content: center;
+    gap: 4rem;
     height: 100vh;
-    width: 90vw;
+    width: 100%;
     z-index: 1;
-    border-top: 1px solid var(--colorBorder2);
-    border-right: 1px solid var(--colorBorder2);
-    border-bottom: 1px solid var(--colorBorder2);
+    border-top: 2px solid var(--colorBorder2);
+    border-right: 2px solid var(--colorBorder2);
+    border-bottom: 2px solid var(--colorBorder2);
     display: none;
 }
 .navbar ul li {
@@ -62,7 +63,6 @@
     position: fixed;
     top: 0;
     margin-top: 74px;
-
 }
 .main{
     margin-top: 100px;
@@ -79,12 +79,16 @@
     .navbar ul {
         width: 50%;
         display: flex;
+        justify-content: space-around;
+        gap: 1rem;
         flex-direction: row;
         height: auto;
         border: 0;
         margin: 0;
     }
     .navbar input:checked + ul {
+        justify-content: space-around;
+        gap: 1rem;
         margin: 0;
         right: 0;
         height: 74px;
@@ -132,16 +136,43 @@
     opacity: 1;
     width: 60%;
 }
-/* .navbar ul li a.activo::before,
-.navbar ul li a:hover::before{
-    width: 75%;
-    opacity: 1;
-}
-.navbar ul li a.activo::after,
-.navbar ul li a:hover::after{
-    width: 55%;
-    opacity: 1;
-} */
 .navbar ul li a:active{
     color: var(--colorBorder) ;
+}
+.navbar ul li a:active{
+    color: var(--colorBorder) ;
+}
+
+/* propiedades para el slider */
+
+.slider{
+    width: 100%;
+    overflow: hidden;
+}
+.slider ul{
+    width: 400%;
+    display: flex;  
+    animation: cambio 10s infinite;
+    animation-direction: alternate;
+}
+.slider li {
+    list-style: none;
+    width: 100%;
+} 
+.slider li img {
+    width: 100%;
+    margin-top: 74px;
+}
+@keyframes cambio {
+    0%{margin-left: 0;}
+    20%{margin-left: 0;}
+
+    25%{margin-left: -100%;}
+    50%{margin-left: -100%;}
+
+    55%{margin-left: -200%;}
+    75%{margin-left: -200%;}
+    
+    80%{margin-left: -300%;}
+    100%{margin-left: -300%;}
 }
